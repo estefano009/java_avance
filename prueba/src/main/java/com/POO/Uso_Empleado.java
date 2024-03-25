@@ -21,10 +21,12 @@ public class Uso_Empleado {
         System.out.println("Nombre: " + empleado2.dame_nombre() + " Su sueldo es : " + empleado2.dame_sueldo() + " Año de Alta de Contrato: "+ empleado2.dame_fechaContrato());
         System.out.println("Nombre: " + empleado3.dame_nombre() + " Su sueldo es : " + empleado3.dame_sueldo() + " Año de Alta de Contrato: "+ empleado3.dame_fechaContrato()); */
 
-        Empleado[] misEmpleados = new Empleado[3];
+        Empleado[] misEmpleados = new Empleado[4];
         misEmpleados[0]=new Empleado("Yared",6000,2024,03,20);
         misEmpleados[1]=new Empleado("David",7000,2024,03,20);
         misEmpleados[2]=new Empleado("Pablo",1200,2024,03,20);
+        misEmpleados[3]=new Empleado("Jose");
+
 
         //BUCLE FOR PARA SUBIR EL SUELDO A LOS 3 DATOS DEL ARRAY
         /*for(int i=0;i<3;i++){
@@ -59,6 +61,7 @@ public class Uso_Empleado {
 
 class Empleado{
 
+    //CLASE CONSTRUCTOR
     public Empleado(String nom, double sue , int anio ,int mes , int dia){
         nombre = nom;
         sueldo = sue;
@@ -66,6 +69,12 @@ class Empleado{
         altaContrato = calendario.getTime();
 
     }
+    //CLASE CONSTRUCTOR
+    public Empleado(String nom){
+        this(nom,30000,2000,01,01);
+
+    }
+
 
     public String dame_nombre(){//GETTER
         return nombre;

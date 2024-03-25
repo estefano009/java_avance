@@ -12,11 +12,16 @@ public class Prueba {
         trabajador1.cambiaSeccion("RRHH"); //ESTADO INICIAL CAMBIA AL UTILIZAR EL SETTER
         trabajador1.cambiaNombre("ESTEFANO");
 
-        System.out.println(trabajador1.devuelveDatos());
+        System.out.println(trabajador1.devuelveDatos() + "\n" + trabajador2.devuelveDatos() + "\n"
+        + trabajador3.devuelveDatos());
+
+        System.out.println(Empleados.dameIdsiguiente());
+
+
         //Empleados.Id++;
-        System.out.println(trabajador2.devuelveDatos());
+        //System.out.println(trabajador2.devuelveDatos());
         //Empleados.Id++;
-        System.out.println(trabajador3.devuelveDatos());
+        //System.out.println(trabajador3.devuelveDatos());
 
 
     }
@@ -28,8 +33,9 @@ class Empleados{
     public Empleados(String nom){
         nombre = nom;
         seccion="Administracion";
-        Id = IdSiguiente;
+        id = IdSiguiente;
         IdSiguiente++;
+
     }
 
     public void cambiaSeccion(String seccion){ //METODO SETTER
@@ -41,13 +47,19 @@ class Empleados{
     }
 
     public String devuelveDatos(){ //METODO GETTER
-        return "El nombre es : " + nombre + " y la seccion es : " + seccion + " y el ID = "+Id;
+        return "El nombre es : " + nombre + " y la seccion es : " + seccion + " y el ID = "+id;
     }
+
+    public static String dameIdsiguiente(){
+
+        return "El Idsiguiente es: " + IdSiguiente;
+    }
+
 
     //LA CLASE FINAL EN NOMBRE ES POR QUE NO SE PUEDE USAR MAS De 1 VEZ OSEA NOMBRE ES NOMB YA NO SE PUEDE MODIFICAR.
     private final String nombre;
     private String seccion;
-    private int Id;
+    private int id;
     //EL USO DEL STATIC ES PARA COMPARTIR ENTRE 2 OBJETOS O MAS UNA VARIABLE EJEMPLO EL ID DE LA CLASE PERSONA SE COMPARTE ENTRE AMBOS OBJETOS 1 y 2(TRABAJADOR1 Y TRABAJADOR2)
     private static int IdSiguiente=1;
 }
